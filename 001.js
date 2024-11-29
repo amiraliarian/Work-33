@@ -25,12 +25,12 @@ function renderTodos() {
     count=0
     const template = todos.map(item => {
         return `
-        <li id="${item}">
+        <li id="${item}" style="color:rgb(0, 0, 255)">
             <span>
             ${item}
             </span>
-            <button  onclick="deleteItem(this)">delete</button>
-            <button  onclick="editItem(this)">edit</button>
+            <button  onclick="deleteItem(this)" style="color: white;
+    background-color: rgb(0, 0, 255); border-radius:  0 2rem 2rem 0;border: 1px solid white;">delete</button>
         </li>
         `
     })

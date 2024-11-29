@@ -1,21 +1,25 @@
-.box1{
-    display: flex
-    ;
-        justify-content: center;
+
+.box1 {
+    display: flex;
+    justify-content: center;
+    align-self: center;
 }
-.inp{
+
+.inp {
     background-color: rgb(65, 65, 255);
     width: 40%;
     border: 1px solid white;
     height: 2rem;
-    border-radius: 2rem 0 0  2rem;
+    color: white;
+    border-radius: 2rem 0 0 2rem;
 }
-.btn{
+
+.btn {
     color: white;
     background-color: rgb(0, 0, 255);
-    font-family:tahoma;
+    font-family: tahoma;
     font-size: 16px;
     width: 10%;
     border: 1px solid white;
-    border-radius:  0 2rem 2rem 0;
+    border-radius: 0 2rem 2rem 0;
 }
