@@ -25,7 +25,7 @@ function renderTodos() {
     count=0
     const template = todos.map(item => {
         return `
-        <li id="${item}" style"color:rgb(0, 0, 255)">
+        <li id="${item}">
             <span>
             ${item}
             </span>
