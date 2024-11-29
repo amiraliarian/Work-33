@@ -4,12 +4,16 @@
     justify-content: center;
     margin-top: 20%;
 }
+.box2{
+    display: flex;
+    justify-content: center;
+}
 
 .inp {
     background-color: rgb(65, 65, 255);
     width: 40%;
     border: 1px solid white;
-    height: 2rem;
+    height: 100px;
     color: white;
     border-radius: 2rem 0 0 2rem;
 }
@@ -20,6 +24,7 @@
     font-family: tahoma;
     font-size: 16px;
     width: 10%;
+    height: 104px;
     border: 1px solid white;
     border-radius: 0 2rem 2rem 0;
 }
