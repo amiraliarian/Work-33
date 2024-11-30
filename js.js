@@ -5,18 +5,36 @@ const root = document.getElementById("root");
 let count=0;
 
 const todos = []
+const todosId= []
 btn.addEventListener("click",handleAddTodo)
 
 function handleAddTodo() {
     const inputVal = input.value
     if(inputVal!==""){
         todos.push(inputVal)
+        todosId.push(inputVal)
+        
+        
 
     }
+    console.log(typeof inputVal)
     input.value=""
+    
 
     return renderTodos() 
 
+
+}
+function renderTodosId(){
+    let id=0
+    
+    for(let i=0;i<todosId.length;i++){
+        todosId.splice(i,1,String(todos[i]+id++))
+        document.getElementById(`${todos[i]}`).setAttribute("id",todosId[i])
+    }
+    return todosId 
+    
+        
 
 }
 
@@ -24,31 +42,40 @@ function handleAddTodo() {
 function renderTodos() {
     count=0
     const template = todos.map(item => {
+        console.log(item)
+        
+        
         return `
-        <li id="${item}" style="color:rgb(0, 0, 255)">
+        
+<li id="${item}" style="color:rgb(0, 0, 255)">
             <span>
             ${item}
             </span>
             <button  onclick="deleteItem(this)" style="color: white;
-    background-color: rgb(0, 0, 255); border-radius:  0 2rem 2rem 0;border: 1px solid white;">delete</button>
-        </li>
+    background-color: rgb(0, 0, 255); border-radius:  2rem 0 0 2rem;border: 1px solid white;">حذف</button>
+        <button  onclick="editItem(this)" style="color: white;
+    background-color: rgb(0, 0, 255); border-radius:  0 2rem 2rem 0;border: 1px solid white;">ویرایش</button></li>
         `
     })
-
+    
+    
     const temp = template.join("")
-
+    
     root.innerHTML = temp
+    return renderTodosId()
 }
 
 
 function deleteItem(clickedElement) {
     count=0
     unFreezAddTodo()
+    // debugger
     clickedElement.parentElement.remove()
     console.log(clickedElement.parentElement)
     for (let i=0;i<todos.length;i++) {
-        if(todos[i]===clickedElement.parentElement.id){
+        if(todosId[i]===clickedElement.parentElement.id){
             todos.splice(i,1)
+            todosId.splice(i,1)
     }
         }
 }
@@ -75,9 +102,9 @@ function editItem(clickedElement){
 
             }
             if(editInput.value!==""){
-        
+            
                 for (let i=0;i<todos.length;i++){
-                    if(todos[i]===clickedElement.parentElement.id){
+                    if(todosId[i]===clickedElement.parentElement.id){
                         todos.splice(i,1,editInput.value)
                         editInput.remove()
                         submitBtn.remove()
