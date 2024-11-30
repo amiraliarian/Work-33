@@ -69,7 +69,7 @@ function renderTodos() {
 function deleteItem(clickedElement) {
     count=0
     unFreezAddTodo()
-    // debugger
+    
     clickedElement.parentElement.remove()
     console.log(clickedElement.parentElement)
     for (let i=0;i<todos.length;i++) {
@@ -89,9 +89,9 @@ function editItem(clickedElement){
         editInput.getAttribute("type","text")
         editInput.getAttribute("value")
         editInput.id="editInput"
-        submitBtn.innerText="change"
+        submitBtn.innerText="ثبت"
         submitBtn.id="editBtn"
-        editInput.placeholder="press change if refuse!"
+        editInput.placeholder="متن مورد نظر را وارد کنید"
         clickedElement.parentElement.appendChild(editInput)
         clickedElement.parentElement.appendChild(submitBtn)
         submitBtn.addEventListener("click",()=>{
